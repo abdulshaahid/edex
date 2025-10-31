@@ -16,29 +16,32 @@ const DailyEntry = () => {
   };
 
   return (
-    <div className="min-h-screen pb-24 px-4 pt-8">
-      <header className="mb-6 animate-fade-in">
-        <Button
-          variant="ghost"
-          onClick={() => navigate("/")}
-          className="mb-4 -ml-2"
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Back
-        </Button>
-        <h1 className="text-3xl font-bold">Daily Entry</h1>
-        <p className="text-muted-foreground">
-          {new Date().toLocaleDateString('en-US', { 
-            weekday: 'long', 
-            month: 'long', 
-            day: 'numeric',
-            year: 'numeric'
-          })}
-        </p>
+    <div className="min-h-screen pb-24 md:pb-8 px-4 md:px-12 pt-8 md:pt-12">
+      <header className="mb-10 md:mb-12 animate-fade-in">
+          <Button
+            variant="ghost"
+            onClick={() => navigate("/")}
+            className="mb-6 -ml-2 hover:bg-primary/10 hover:text-primary transition-colors"
+          >
+            <ArrowLeft className="w-5 h-5 mr-2" />
+            Back to Dashboard
+          </Button>
+          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent mb-3">
+            Daily Entry
+          </h1>
+          <p className="text-muted-foreground text-base md:text-lg">
+            {new Date().toLocaleDateString('en-US', { 
+              weekday: 'long', 
+              month: 'long', 
+              day: 'numeric',
+              year: 'numeric'
+            })}
+          </p>
       </header>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <section className="rounded-3xl bg-card p-6 shadow-soft border border-border/50 animate-slide-up">
+      <form onSubmit={handleSubmit} className="space-y-8">
+          <div className="md:grid md:grid-cols-2 md:gap-8 space-y-8 md:space-y-0">
+            <section className="rounded-3xl bg-card p-6 md:p-8 shadow-lg border border-border/50 hover:shadow-xl transition-all duration-300 animate-slide-up md:h-fit">
           <h2 className="text-lg font-bold mb-4">Sleep Tracker</h2>
           <div className="grid grid-cols-2 gap-4">
             <div>
@@ -62,15 +65,17 @@ const DailyEntry = () => {
           </div>
         </section>
 
-        <section className="rounded-3xl bg-card p-6 shadow-soft border border-border/50 animate-slide-up" style={{ animationDelay: "50ms" }}>
+            <section className="rounded-3xl bg-card p-6 shadow-soft border border-border/50 animate-slide-up md:h-fit" style={{ animationDelay: "50ms" }}>
           <h2 className="text-lg font-bold mb-4">Fit & Strong</h2>
           <Textarea 
             placeholder="Describe your workout, exercises, and achievements..."
             className="rounded-2xl min-h-[100px]"
           />
-        </section>
+            </section>
+          </div>
 
-        <section className="rounded-3xl bg-card p-6 shadow-soft border border-border/50 animate-slide-up" style={{ animationDelay: "100ms" }}>
+          <div className="md:grid md:grid-cols-2 md:gap-4 space-y-6 md:space-y-0">
+            <section className="rounded-3xl bg-card p-6 shadow-soft border border-border/50 animate-slide-up md:h-fit" style={{ animationDelay: "100ms" }}>
           <h2 className="text-lg font-bold mb-4">Weight</h2>
           <div className="flex gap-2 items-end">
             <div className="flex-1">
@@ -85,9 +90,9 @@ const DailyEntry = () => {
             </div>
             <div className="text-sm text-muted-foreground pb-2">kg</div>
           </div>
-        </section>
+            </section>
 
-        <section className="rounded-3xl bg-card p-6 shadow-soft border border-border/50 animate-slide-up" style={{ animationDelay: "150ms" }}>
+            <section className="rounded-3xl bg-card p-6 shadow-soft border border-border/50 animate-slide-up md:h-fit" style={{ animationDelay: "150ms" }}>
           <h2 className="text-lg font-bold mb-4">Eat Smart</h2>
           <div className="space-y-3">
             <Textarea 
@@ -104,25 +109,29 @@ const DailyEntry = () => {
               />
             </div>
           </div>
-        </section>
+            </section>
+          </div>
 
-        <section className="rounded-3xl bg-card p-6 shadow-soft border border-border/50 animate-slide-up" style={{ animationDelay: "200ms" }}>
+          <div className="md:grid md:grid-cols-2 md:gap-4 space-y-6 md:space-y-0">
+            <section className="rounded-3xl bg-card p-6 shadow-soft border border-border/50 animate-slide-up md:h-fit" style={{ animationDelay: "200ms" }}>
           <h2 className="text-lg font-bold mb-4">Mind Gym</h2>
           <Textarea 
             placeholder="Mental exercises, learning activities, problem-solving..."
             className="rounded-2xl min-h-[100px]"
           />
-        </section>
+            </section>
 
-        <section className="rounded-3xl bg-card p-6 shadow-soft border border-border/50 animate-slide-up" style={{ animationDelay: "250ms" }}>
+            <section className="rounded-3xl bg-card p-6 shadow-soft border border-border/50 animate-slide-up md:h-fit" style={{ animationDelay: "250ms" }}>
           <h2 className="text-lg font-bold mb-4">Real World Problems</h2>
           <Textarea 
             placeholder="Problems analyzed, solutions explored..."
             className="rounded-2xl min-h-[100px]"
           />
-        </section>
+            </section>
+          </div>
 
-        <section className="rounded-3xl bg-card p-6 shadow-soft border border-border/50 animate-slide-up" style={{ animationDelay: "300ms" }}>
+          <div className="md:grid md:grid-cols-2 md:gap-4 space-y-6 md:space-y-0">
+            <section className="rounded-3xl bg-card p-6 shadow-soft border border-border/50 animate-slide-up md:h-fit" style={{ animationDelay: "300ms" }}>
           <h2 className="text-lg font-bold mb-4">Power Circle</h2>
           <div className="space-y-3">
             <div className="grid grid-cols-2 gap-3">
@@ -133,9 +142,9 @@ const DailyEntry = () => {
               Add Another Person
             </Button>
           </div>
-        </section>
+            </section>
 
-        <section className="rounded-3xl bg-card p-6 shadow-soft border border-border/50 animate-slide-up" style={{ animationDelay: "350ms" }}>
+            <section className="rounded-3xl bg-card p-6 shadow-soft border border-border/50 animate-slide-up md:h-fit" style={{ animationDelay: "350ms" }}>
           <h2 className="text-lg font-bold mb-4">Build Your Brand</h2>
           <div className="space-y-3">
             <Textarea 
@@ -148,9 +157,11 @@ const DailyEntry = () => {
               className="rounded-2xl"
             />
           </div>
-        </section>
+            </section>
+          </div>
 
-        <section className="rounded-3xl bg-card p-6 shadow-soft border border-border/50 animate-slide-up" style={{ animationDelay: "400ms" }}>
+          <div className="md:grid md:grid-cols-2 md:gap-4 space-y-6 md:space-y-0">
+            <section className="rounded-3xl bg-card p-6 shadow-soft border border-border/50 animate-slide-up md:h-fit" style={{ animationDelay: "400ms" }}>
           <h2 className="text-lg font-bold mb-4">Growth Fuel</h2>
           <div className="space-y-3">
             <Textarea 
@@ -163,9 +174,9 @@ const DailyEntry = () => {
               className="rounded-2xl"
             />
           </div>
-        </section>
+            </section>
 
-        <section className="rounded-3xl bg-card p-6 shadow-soft border border-border/50 animate-slide-up" style={{ animationDelay: "450ms" }}>
+            <section className="rounded-3xl bg-card p-6 shadow-soft border border-border/50 animate-slide-up md:h-fit" style={{ animationDelay: "450ms" }}>
           <h2 className="text-lg font-bold mb-4">Prayer / Meditation</h2>
           <div className="grid grid-cols-2 gap-4">
             <div>
@@ -187,17 +198,18 @@ const DailyEntry = () => {
               />
             </div>
           </div>
-        </section>
+            </section>
+          </div>
 
-        <section className="rounded-3xl bg-card p-6 shadow-soft border border-border/50 animate-slide-up" style={{ animationDelay: "500ms" }}>
+          <section className="rounded-3xl bg-card p-6 shadow-soft border border-border/50 animate-slide-up" style={{ animationDelay: "500ms" }}>
           <h2 className="text-lg font-bold mb-4">Daily Feedback</h2>
           <Textarea 
             placeholder="Reflect on your day, achievements, learnings, and areas for improvement..."
             className="rounded-2xl min-h-[120px]"
           />
-        </section>
+          </section>
 
-        <div className="flex gap-3 pt-4">
+          <div className="flex gap-3 pt-4 md:max-w-md md:mx-auto">
           <Button
             type="button"
             variant="outline"

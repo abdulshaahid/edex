@@ -38,36 +38,40 @@ const CalendarView = () => {
   };
 
   return (
-    <div className="min-h-screen pb-24 px-4 pt-8">
-      <header className="mb-8 animate-fade-in">
-        <h1 className="text-3xl font-bold mb-2">Calendar</h1>
-        <p className="text-muted-foreground">Track your daily progress</p>
+    <div className="min-h-screen pb-24 md:pb-8 px-4 md:px-12 pt-8 md:pt-12">
+      <header className="mb-10 md:mb-12 animate-fade-in">
+        <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent mb-3">
+          Calendar
+        </h1>
+        <p className="text-muted-foreground text-base md:text-lg">Track your daily progress</p>
       </header>
 
-      <div className="rounded-3xl bg-card p-6 shadow-soft border border-border/50 animate-scale-in">
-        <div className="flex items-center justify-between mb-6">
+      <div className="grid md:grid-cols-[1fr,1.5fr] gap-8 md:gap-12">
+        {/* Calendar Section */}
+        <div className="rounded-3xl bg-card p-8 md:p-10 shadow-lg border border-border/50 hover:shadow-xl transition-all duration-300 animate-scale-in">
+        <div className="flex items-center justify-between mb-8">
           <Button
             variant="ghost"
             size="icon"
             onClick={previousMonth}
-            className="rounded-full"
+            className="rounded-full hover:bg-primary/10 hover:text-primary transition-colors"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="w-6 h-6" />
           </Button>
-          <h2 className="text-xl font-bold">
+          <h2 className="text-2xl md:text-3xl font-bold">
             {monthNames[currentDate.getMonth()]} {currentDate.getFullYear()}
           </h2>
           <Button
             variant="ghost"
             size="icon"
             onClick={nextMonth}
-            className="rounded-full"
+            className="rounded-full hover:bg-primary/10 hover:text-primary transition-colors"
           >
-            <ChevronRight className="w-5 h-5" />
+            <ChevronRight className="w-6 h-6" />
           </Button>
         </div>
 
-        <div className="grid grid-cols-7 gap-2 mb-2">
+        <div className="grid grid-cols-7 gap-2 md:gap-3 mb-2">
           {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
             <div key={day} className="text-center text-xs font-medium text-muted-foreground p-2">
               {day}
@@ -75,7 +79,7 @@ const CalendarView = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-7 gap-2">
+        <div className="grid grid-cols-7 gap-2 md:gap-3">
           {Array.from({ length: firstDayOfMonth }).map((_, index) => (
             <div key={`empty-${index}`} className="aspect-square" />
           ))}
@@ -106,7 +110,7 @@ const CalendarView = () => {
         </div>
 
         <div className="mt-6 pt-6 border-t border-border/50">
-          <div className="grid grid-cols-3 gap-3">
+          <div className="flex justify-center gap-6">
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 rounded-lg bg-success/20 border-2 border-success/40" />
               <span className="text-xs text-muted-foreground">Completed</span>
@@ -121,21 +125,23 @@ const CalendarView = () => {
             </div>
           </div>
         </div>
-      </div>
+        </div>
 
-      <section className="mt-6 animate-slide-up" style={{ animationDelay: "200ms" }}>
-        <h3 className="font-bold mb-3">This Month's Summary</h3>
-        <div className="grid grid-cols-2 gap-3">
-          <div className="rounded-2xl bg-card p-4 shadow-soft border border-border/50">
-            <div className="text-2xl font-bold text-success">12</div>
-            <div className="text-sm text-muted-foreground">Days Completed</div>
-          </div>
-          <div className="rounded-2xl bg-card p-4 shadow-soft border border-border/50">
-            <div className="text-2xl font-bold text-primary">85%</div>
-            <div className="text-sm text-muted-foreground">Completion Rate</div>
+        {/* Summary Section */}
+        <div className="space-y-6 animate-slide-up" style={{ animationDelay: "200ms" }}>
+          <h3 className="font-bold text-2xl md:text-3xl">This Month's Summary</h3>
+          <div className="space-y-4">
+            <div className="rounded-2xl bg-card p-6 shadow-lg border border-border/50 hover:shadow-xl hover:border-success/30 transition-all duration-300">
+              <div className="text-4xl md:text-5xl font-bold text-success mb-2">12</div>
+              <div className="text-sm md:text-base text-muted-foreground font-medium">Days Completed</div>
+            </div>
+            <div className="rounded-2xl bg-card p-6 shadow-lg border border-border/50 hover:shadow-xl hover:border-primary/30 transition-all duration-300">
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">85%</div>
+              <div className="text-sm md:text-base text-muted-foreground font-medium">Completion Rate</div>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 };

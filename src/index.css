@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
+    --background: 40 10% 98%;
     --foreground: 0 0% 10%;
 
     --card: 0 0% 100%;
@@ -104,6 +104,18 @@ All colors MUST be HSL.
     @apply bg-background text-foreground font-sans antialiased;
     min-height: 100vh;
   }
+
+  /* Placeholder styling - more off-white */
+  input::placeholder,
+  textarea::placeholder {
+    color: hsl(0 0% 70%);
+    opacity: 1;
+  }
+
+  /* Responsive font sizes */
+  html {
+    font-size: 16px;
+  }
 }
 
 @layer utilities {
@@ -117,5 +129,36 @@ All colors MUST be HSL.
 
   .glass {
     @apply bg-white/80 backdrop-blur-xl;
+  }
+
+  /* Custom pulse animations for ambient lights */
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.6;
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes pulse-slower {
+    0%, 100% {
+      opacity: 0.25;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(1.15);
+    }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
+
+  .animate-pulse-slower {
+    animation: pulse-slower 5s ease-in-out infinite;
   }
 }

@@ -441,7 +441,7 @@ const Dashboard = () => {
                 ref={el => statsRef.current[0] = el} 
                 onMouseEnter={() => handleStatsHover(0, true)}
                 onMouseLeave={() => handleStatsHover(0, false)}
-                className="group relative rounded-xl md:rounded-2xl bg-success/10 hover:bg-success/10 p-3 sm:p-4 md:p-6 transition-all duration-300 cursor-pointer"
+                className="group relative rounded-2xl md:rounded-2xl bg-success/10 hover:bg-success/10 p-3 sm:p-4 md:p-6 transition-all duration-300 cursor-pointer"
               >
                 <div className="absolute top-1.5 right-1.5 sm:top-2 sm:right-2 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-success/10 flex items-center justify-center">
                   <div className="stat-dot w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-success animate-pulse" />
@@ -455,7 +455,7 @@ const Dashboard = () => {
                 ref={el => statsRef.current[1] = el}
                 onMouseEnter={() => handleStatsHover(1, true)}
                 onMouseLeave={() => handleStatsHover(1, false)}
-                className="group relative rounded-xl md:rounded-2xl bg-orange-500/10 hover:bg-orange-500/10 p-3 sm:p-4 md:p-6 transition-all duration-300 cursor-pointer"
+                className="group relative rounded-2xl md:rounded-2xl bg-orange-500/10 hover:bg-orange-500/10 p-3 sm:p-4 md:p-6 transition-all duration-300 cursor-pointer"
               >
                 <div className="absolute top-1.5 right-1.5 sm:top-2 sm:right-2 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-orange-500/10 flex items-center justify-center">
                   <div className="stat-dot w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-orange-500 animate-pulse" />
@@ -469,7 +469,7 @@ const Dashboard = () => {
                 ref={el => statsRef.current[2] = el}
                 onMouseEnter={() => handleStatsHover(2, true)}
                 onMouseLeave={() => handleStatsHover(2, false)}
-                className="group relative rounded-xl md:rounded-2xl bg-blue-500/10 hover:bg-blue-500/10 p-3 sm:p-4 md:p-6 transition-all duration-300 cursor-pointer"
+                className="group relative rounded-2xl md:rounded-2xl bg-blue-500/10 hover:bg-blue-500/10 p-3 sm:p-4 md:p-6 transition-all duration-300 cursor-pointer"
               >
                 <div className="absolute top-1.5 right-1.5 sm:top-2 sm:right-2 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-blue-500/10 flex items-center justify-center">
                   <div className="stat-dot w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-500" />
@@ -480,7 +480,7 @@ const Dashboard = () => {
             </div>
 
             {/* Streak Banner */}
-            <div ref={streakRef} className="mt-4 sm:mt-6 rounded-xl md:rounded-2xl bg-gradient-to-r from-primary/45 via-primary/20 to-primary/15 p-4 sm:p-5 md:p-6 relative overflow-hidden group hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 z-10">
+            <div ref={streakRef} className="mt-4 sm:mt-6 rounded-2xl md:rounded-2xl bg-gradient-to-r from-primary/45 via-primary/20 to-primary/5 p-4 sm:p-5 md:p-6 relative overflow-hidden group hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 z-10">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
               <div className="flex items-center gap-3 sm:gap-4">
                 <div className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 rounded-lg md:rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg shadow-primary/20 flex-shrink-0">

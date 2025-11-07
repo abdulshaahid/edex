@@ -507,7 +507,7 @@ const Dashboard = () => {
         {/* Tasks Section */}
         <div className="space-y-6 mx-3 md:mx-0">
           {/* Due Today Tasks */}
-          <section className="rounded-3xl md:rounded-3xl bg-muted/30 p-5 sm:p-6 md:p-8 shadow-md hover:shadow-lg border border-border/40 transition-all duration-300">
+          <section className="rounded-3xl md:rounded-3xl bg-muted/30 p-3 sm:p-6 md:p-8 shadow-md hover:shadow-lg border border-border/40 transition-all duration-300">
             <div className="flex items-center justify-between mb-5">
               <h2 className="text-xl md:text-2xl font-bold">Due Today</h2>
               <span className="text-sm text-muted-foreground">
@@ -515,7 +515,7 @@ const Dashboard = () => {
               </span>
             </div>
             
-            <div className="grid gap-3 md:gap-4">
+            <div className="grid grid-cols-1 gap-3 md:gap-4 w-full">
               {habitSections.filter(h => h.dueDate === "today").map((habit, originalIndex) => {
                 const index = habitSections.indexOf(habit);
                 const isExpanded = expandedTask === index;
@@ -912,7 +912,7 @@ const Dashboard = () => {
           </section>
 
           {/* Tomorrow Tasks */}
-          <section className="rounded-3xl md:rounded-3xl bg-muted/30 p-5 sm:p-6 md:p-8 shadow-md hover:shadow-lg border border-border/40 transition-all duration-300">
+          <section className="rounded-3xl md:rounded-3xl bg-muted/30 p-3 sm:p-6 md:p-8 shadow-md hover:shadow-lg border border-border/40 transition-all duration-300">
             <div className="flex items-center justify-between mb-5">
               <h2 className="text-xl md:text-2xl font-bold">Tomorrow</h2>
               <span className="text-sm text-muted-foreground">
@@ -920,7 +920,7 @@ const Dashboard = () => {
               </span>
             </div>
             
-            <div className="grid gap-3 md:gap-4">
+            <div className="grid grid-cols-1 gap-3 md:gap-4 w-full">
               {habitSections.filter(h => h.dueDate === "tomorrow").map((habit, originalIndex) => {
                 const index = habitSections.indexOf(habit);
                 const isExpanded = expandedTask === index;
@@ -1323,7 +1323,7 @@ const Dashboard = () => {
           </section>
 
           {/* Daily Feedback Section */}
-          <section className="rounded-3xl md:rounded-3xl bg-muted/30 p-5 sm:p-6 md:p-8 shadow-md hover:shadow-lg border border-border/40 transition-all duration-300">
+          <section className="rounded-3xl md:rounded-3xl bg-muted/30 p-3 sm:p-6 md:p-8 shadow-md hover:shadow-lg border border-border/40 transition-all duration-300">
             <h3 className="text-xl md:text-2xl font-bold mb-5 flex items-center gap-2">
               <MessageSquare className="w-6 h-6 text-primary" />
               Daily Feedback
